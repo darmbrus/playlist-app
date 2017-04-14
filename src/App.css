@@ -1,24 +1,75 @@
 .App {
-  text-align: center;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Main {
+    min-height: 800px;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Content {
+    padding: 1em 0 0 1em;
+    background-color: #F5F3F5;
+    color: #302B27;
+    flex: 3 1 60%;
+    order: 2;
 }
 
-.App-intro {
-  font-size: large;
+.NavBar {
+    padding: 7px;
+    margin: 0;
+    background-color: #576CA8;
+    flex: 1 6 20%;
+    order: 1;
+    max-width: 200px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.NavButton {
+    list-style-type: none;
+    margin: .1em .1em .1em .25em;
+}
+
+header, footer {
+    display: block;
+    padding: .5em 0 .5em 2em;
+    background: #1B264F;
+    color: #F5F3F5
+}
+
+footer {
+  font-size: small;
+  text-align: right;
+  padding-right: 10px;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    .Main, .App {
+        flex-direction: column;
+    }
+
+    .Content, .NavBar {
+    /* Return them to document order */
+        order: 0;
+    }
+
+    .NavBar, header, footer {
+        max-width: 100%;
+        min-height: 50px;
+    }
+}
+
+a:link {
+    color: #F5F3F5;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #F5F3F5;
+}
+
+a:hover {
+    text-decoration: underline;
 }
