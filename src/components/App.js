@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../style/App.css';
 import Header from './Header.js';
 import NavBar from './NavBar.js';
-import Content from './Content.js';
+import Content from '../containers/Content.js';
 import Footer from './Footer.js';
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
         <Header />
         <div className="Main">
           <NavBar />
-          <Content data={this.state.data}/>
+          <Content data={this.state.data} />
         </div>
         <Footer />
       </div>
