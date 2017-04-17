@@ -9,6 +9,8 @@ import ReduxPromise from 'redux-promise';
 
 const createStroreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
+export const API_ROOT = "http://localhost:8082"
+
 ReactDOM.render(
   <Provider store={createStroreWithMiddleware(reducers)}>
     <App />

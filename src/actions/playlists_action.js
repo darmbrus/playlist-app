@@ -1,8 +1,10 @@
 import axios from 'axios';
+import { API_ROOT } from '../index.js';
 export const FETCH_PLAYLISTS = 'FETCH_PLAYLISTS';
 
+
 export function fetchPlaylists() {
-  const url = "http://pi:8080/exposed/playlists"
+  const url = API_ROOT + "/exposed/playlists"
 
   const request = axios.get(url);
   console.log(request);

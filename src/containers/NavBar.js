@@ -3,7 +3,8 @@ import NavButton from '../components/NavButton.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPlaylists } from '../actions/playlists_action.js';
-import { navSelectUser, navSelectPlaylist } from '../actions/navBar_action.js'
+import { navSelectHome, navSelectUser, navSelectPlaylist } from '../actions/navBar_action.js';
+import { fetchUserInfo } from '../actions/userInfo_actions.js';
 
 class NavBar extends Component {
   runPlaylist() {
@@ -12,13 +13,21 @@ class NavBar extends Component {
     this.props.fetchPlaylists();
   }
 
+  runUser() {
+    this.props.fetchUserInfo();
+    this.props.navSelectUser();
+  }
+
   render() {
     console.log('pause');
     return (
       <ul className="NavBar">
         <NavButton
+          name="Home"
+          onClick={() => this.props.navSelectHome()} />
+        <NavButton
           name="User"
-          onClick={() => this.props.navSelectUser()} />
+          onClick={() => this.runUser()} />
         <NavButton
           name="Playlists"
           onClick={() => this.runPlaylist()} />
@@ -29,9 +38,11 @@ class NavBar extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
+    fetchUserInfo: fetchUserInfo,
     fetchPlaylists: fetchPlaylists,
     navSelectUser: navSelectUser,
-    navSelectPlaylist: navSelectPlaylist
+    navSelectPlaylist: navSelectPlaylist,
+    navSelectHome: navSelectHome
   }, dispatch)
 }
 

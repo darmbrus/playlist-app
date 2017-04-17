@@ -8,8 +8,6 @@ class PlaylistList extends Component {
     if (this.props.playlists == null) {
       return <div></div>
     }
-
-
     return this.props.playlists.data.map((playlist) => {
       return (<li
         key={playlist.name}
@@ -19,7 +17,7 @@ class PlaylistList extends Component {
 
   render() {
     return (
-      <ul className="Content">
+      <ul>
         {this.renderList()}
       </ul>
     )

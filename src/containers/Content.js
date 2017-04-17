@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PlaylistList from './playlist-list.js'
+import PlaylistList from './playlist-list.js';
+import UserInfo from './userInfo.js';
 
 class Content extends Component {
   selectHeader() {
@@ -8,18 +9,24 @@ class Content extends Component {
       return (
         <h1>User</h1>
       )
+    } else if (this.props.nav === "PLAYLIST") {
+      return <h1>Playlists</h1>
+    } else {
+      return <h1>Application Info</h1>
     }
-
-    return <h1>Playlists</h1>
   }
 
   selectContent() {
     if (this.props.nav === "USER") {
       return (
-        <p>user details</p>
+        <UserInfo />
       )
+    } else if (this.props.nav === "PLAYLIST") {
+      return <PlaylistList />
+    } else {
+      return <p>Application Info</p>
     }
-    return <PlaylistList />
+
   }
 
   render() {
