@@ -1,28 +1,32 @@
 import React from 'react';
 import NavButton from './NavButton.js'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import fetchPlaylists from '../actions/playlists_action.js';
 
 class NavBar extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      data: ""
-    }
-  }
-
-  onClick(newData) {
-    this.setState({
-      data: newData
-    });
+  runClick() {
+    console.log('run click')
+    this.props.fetchPlaylists()
   }
 
   render() {
+    console.log('pause');
     return (
       <ul className="NavBar">
-        <NavButton name="Playlists" onClick={this.onClick}/>
-        <NavButton name="Create discover weekly" onClick={this.onClick}/>
+        <li
+          onClick={this.runClick}
+        >Test</li>
+        <NavButton
+          name="Playlists"
+          onClick={() => this.props.fetchPlaylists()} />
       </ul>
     )
   }
 }
 
-export default NavBar;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchPlaylists: fetchPlaylists }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(NavBar)
