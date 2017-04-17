@@ -9,14 +9,12 @@ export function navSelectHome() {
 }
 
 export function navSelectUser() {
-  console.log("user clicked")
   return {
     type: NAV_USER
   }
 }
 
 export function navSelectPlaylist() {
-  console.log("playlist clicked")
   return {
     type: NAV_PLAYLIST
   }

@@ -8,7 +8,6 @@ import { fetchUserInfo } from '../actions/userInfo_actions.js';
 
 class NavBar extends Component {
   runPlaylist() {
-    console.log('runPlaylist');
     this.props.navSelectPlaylist();
     this.props.fetchPlaylists();
   }
@@ -19,7 +18,6 @@ class NavBar extends Component {
   }
 
   render() {
-    console.log('pause');
     return (
       <ul className="NavBar">
         <NavButton

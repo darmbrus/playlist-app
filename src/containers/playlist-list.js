@@ -31,7 +31,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  console.log("dispact for playlist-list")
   return bindActionCreators({ selectPlaylist: selectPlaylist }, dispatch)
 }
 

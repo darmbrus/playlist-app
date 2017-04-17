@@ -7,7 +7,6 @@ export function fetchUserInfo() {
   const url = API_ROOT + "/exposed/user";
 
   const request = axios.get(url);
-  console.log(request)
 
   return {
     type: FETCH_USER_INFO,

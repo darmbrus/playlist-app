@@ -24,7 +24,7 @@ class Content extends Component {
     } else if (this.props.nav === "PLAYLIST") {
       return <PlaylistList />
     } else {
-      return <p>Application Info</p>
+      return <p>Application Info: v0.0.1</p>
     }
 
   }

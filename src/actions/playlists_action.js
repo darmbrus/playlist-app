@@ -7,7 +7,6 @@ export function fetchPlaylists() {
   const url = API_ROOT + "/exposed/playlists"
 
   const request = axios.get(url);
-  console.log(request);
 
   return {
     type: FETCH_PLAYLISTS,
