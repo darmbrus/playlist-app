@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectPlaylist } from '../actions/index';
+import { createRandomPlaylist } from '../actions/playlists_action.js';
 import { bindActionCreators } from 'redux';
 
 class PlaylistList extends Component {
@@ -9,9 +10,9 @@ class PlaylistList extends Component {
       return <div></div>
     }
     return this.props.playlists.data.map((playlist) => {
-      return (<li
-        key={playlist.name}
-      >{playlist.name}</li>)
+      return (
+        <li key={playlist.name} onClick={() => this.props.createRandomPlaylist(playlist)}> {playlist.name} </li>
+      )
     });
   }
 
@@ -31,7 +32,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectPlaylist: selectPlaylist }, dispatch)
+  return bindActionCreators({ createRandomPlaylist: createRandomPlaylist }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistList)

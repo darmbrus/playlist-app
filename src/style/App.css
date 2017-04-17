@@ -63,12 +63,12 @@ footer {
     }
 }
 
-a:link {
+.NavBar a:link {
     color: #F5F3F5;
     text-decoration: none;
 }
 
-a:visited {
+.NavBar a:visited {
     color: #F5F3F5;
 }
 
