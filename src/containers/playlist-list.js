@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 class PlaylistList extends Component {
   renderList() {
     if (this.props.playlists == null) {
-      console.log("pause")
       return <div></div>
     }
 

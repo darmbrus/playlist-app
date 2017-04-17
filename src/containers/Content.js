@@ -1,16 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PlaylistList from './playlist-list.js'
 
 class Content extends Component {
-  render() {
-    if (this.props.activePlaylist == null) {
-      return <div></div>
+  selectHeader() {
+    if (this.props.nav === "USER") {
+      return (
+        <h1>User</h1>
+      )
     }
 
+    return <h1>Playlists</h1>
+  }
+
+  selectContent() {
+    if (this.props.nav === "USER") {
+      return (
+        <p>user details</p>
+      )
+    }
+    return <PlaylistList />
+  }
+
+  render() {
     return (
       <div className="Content">
-        <h1>Test Content</h1>
-        <p>{this.props.activePlaylist.name}</p>
+        {this.selectHeader()}
+        {this.selectContent()}
       </div>
     )
   }
@@ -18,7 +34,7 @@ class Content extends Component {
 
 function mapStateToProps(state) {
   return {
-    activePlaylist: state.activePlaylist
+    nav: state.nav
   }
 }
 
