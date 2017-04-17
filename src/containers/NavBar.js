@@ -1,22 +1,14 @@
-import React from 'react';
-import NavButton from './NavButton.js'
+import React, { Component } from 'react';
+import NavButton from '../components/NavButton.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetchPlaylists from '../actions/playlists_action.js';
+import { fetchPlaylists } from '../actions/playlists_action.js';
 
-class NavBar extends React.Component {
-  runClick() {
-    console.log('run click')
-    this.props.fetchPlaylists()
-  }
-
+class NavBar extends Component {
   render() {
     console.log('pause');
     return (
       <ul className="NavBar">
-        <li
-          onClick={this.runClick}
-        >Test</li>
         <NavButton
           name="Playlists"
           onClick={() => this.props.fetchPlaylists()} />

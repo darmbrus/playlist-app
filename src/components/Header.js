@@ -5,7 +5,7 @@ class Header extends React.Component {
     return (
       <header>
         <h1>
-          playlist-app.
+          playlist app.
         </h1>
       </header>
     )

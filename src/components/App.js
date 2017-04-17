@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../style/App.css';
 import Header from './Header.js';
-import NavBar from './NavBar.js';
+import NavBar from '../containers/NavBar.js';
 import Content from '../containers/Content.js';
 import Footer from './Footer.js';
 import PlaylistList from '../containers/playlist-list.js'

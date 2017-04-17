@@ -1,5 +1,6 @@
 .App {
   font-family: sans-serif;
+  margin: 8px;
 }
 
 .Main {
@@ -29,13 +30,14 @@
 .NavButton {
     list-style-type: none;
     margin: .1em .1em .1em .25em;
+    color: #F5F3F5;
 }
 
 header, footer {
     display: block;
     padding: .5em 0 .5em 2em;
     background: #1B264F;
-    color: #F5F3F5
+    color: #F5F3F5;
 }
 
 footer {

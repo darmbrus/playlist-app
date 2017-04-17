@@ -6,12 +6,13 @@ import { bindActionCreators } from 'redux';
 class PlaylistList extends Component {
   renderList() {
     if (this.props.playlists == null) {
+      console.log("pause")
       return <div></div>
     }
 
-    return this.props.playlists.map((playlist) => {
+
+    return this.props.playlists.data.map((playlist) => {
       return (<li
-        onClick={() => this.props.selectPlaylist(playlist)}
         key={playlist.name}
       >{playlist.name}</li>)
     });
@@ -33,6 +34,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+  console.log("dispact for playlist-list")
   return bindActionCreators({ selectPlaylist: selectPlaylist }, dispatch)
 }
 

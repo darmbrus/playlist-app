@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchPlaylists } from '../actions/index';
 
 class Content extends Component {
   render() {
@@ -24,8 +22,4 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchPlaylists }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Content); 
+export default connect(mapStateToProps, null)(Content); 
