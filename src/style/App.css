@@ -49,14 +49,12 @@ footer {
   padding-right: 10px;
 }
 
-/* Too narrow to support three columns */
-@media all and (max-width: 640px) {
+@media all and (max-width: 600px) {
     .Main, .App {
         flex-direction: column;
     }
 
     .Content, .NavBar {
-    /* Return them to document order */
         order: 0;
     }
 
@@ -79,5 +77,9 @@ a {
 }
 
 a:hover {
+    text-decoration: underline;
+}
+
+.NavButton:hover {
     text-decoration: underline;
 }

@@ -13,14 +13,17 @@ class UserInfo extends Component {
         <li>User name: {this.props.user.id}</li>
       )
     }
-    return <li></li>
+    return <div>Loading</div>
   }
 
   render() {
     return (
-      <ul>
-        {this.renderUserInfoList()}
-      </ul>
+      <div>
+        <h2>Current user details:</h2>
+        <ul>
+          {this.renderUserInfoList()}
+        </ul>
+      </div>
     )
   }
 }

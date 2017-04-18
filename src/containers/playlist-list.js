@@ -10,7 +10,7 @@ class PlaylistList extends Component {
 
   renderList(playlists) {
     if (playlists == null) {
-      return <div></div>
+      return <div>Loading...</div>
     }
     return playlists.map((playlist) => {
       return (
@@ -26,9 +26,12 @@ class PlaylistList extends Component {
 
   render() {
     return (
-      <ul>
-        {this.renderList(this.props.playlists)}
-      </ul>
+      <div>
+        <h2>Current user's playlists:</h2>
+        <ul>
+          {this.renderList(this.props.playlists)}
+        </ul>
+      </div>
     )
   }
 }
