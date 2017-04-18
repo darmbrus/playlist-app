@@ -7,6 +7,7 @@ class UserInfo extends Component {
   componentWillMount() {
     this.props.fetchUserInfo()
   }
+
   renderUserInfoList() {
     if (this.props.user != null) {
       return (

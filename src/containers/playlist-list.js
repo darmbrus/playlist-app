@@ -14,7 +14,7 @@ class PlaylistList extends Component {
     }
     return playlists.map((playlist) => {
       return (
-        <li key={playlist.name}>
+        <li key={playlist.id}>
           <a
             onClick={() => this.props.createRandomPlaylist(playlist)}>
             {playlist.name}
