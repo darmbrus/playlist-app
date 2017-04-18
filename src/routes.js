@@ -9,6 +9,7 @@ import index from './components/index.js'
 export default (
   < Route path="/" component={App} >
     <IndexRoute component={index} />
+    <Route path="main" component={index} />
     <Route path="user" component={userInfo} />
     <Route path="playlists" component={playlistList} />
   </Route>

@@ -23,11 +23,4 @@ class NavBar extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    fetchUserInfo: fetchUserInfo,
-    fetchPlaylists: fetchPlaylists,
-  }, dispatch)
-}
-
-export default connect(null, mapDispatchToProps)(NavBar)
+export default NavBar;
