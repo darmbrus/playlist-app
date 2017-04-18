@@ -5,7 +5,7 @@ class UserInfo extends Component {
   renderUserInfoList() {
     if (this.props.user != null) {
       return (
-        <li>User name: {this.props.user.data.id}</li>
+        <li>User name: {this.props.user.id}</li>
       )
     }
     return <li></li>

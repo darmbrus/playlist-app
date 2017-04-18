@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectPlaylist } from '../actions/index';
 import { createRandomPlaylist } from '../actions/playlists_action.js';
 import { bindActionCreators } from 'redux';
 
 class PlaylistList extends Component {
-  renderList() {
-    if (this.props.playlists == null) {
+  renderList(playlists) {
+    if (playlists == null) {
       return <div></div>
     }
-    return this.props.playlists.data.map((playlist) => {
+    return playlists.map((playlist) => {
       return (
-        <li key={playlist.name} onClick={() => this.props.createRandomPlaylist(playlist)}> {playlist.name} </li>
+        <li key={playlist.name}>
+          <a
+            onClick={() => this.props.createRandomPlaylist(playlist)}>
+            {playlist.name}
+          </a>
+        </li>
       )
     });
   }
@@ -19,16 +23,14 @@ class PlaylistList extends Component {
   render() {
     return (
       <ul>
-        {this.renderList()}
+        {this.renderList(this.props.playlists)}
       </ul>
     )
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    playlists: state.playlists
-  };
+function mapStateToProps({ playlists }) {
+  return { playlists };
 }
 
 function mapDispatchToProps(dispatch) {

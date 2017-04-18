@@ -63,6 +63,10 @@ footer {
     }
 }
 
+a {
+    cursor: pointer;
+}
+
 .NavBar a:link {
     color: #F5F3F5;
     text-decoration: none;
