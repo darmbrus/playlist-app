@@ -11,6 +11,7 @@
 }
 
 .Content {
+    min-height: 450px;
     padding: 1em 0 0 1em;
     margin: 0;
     background-color: #F5F3F5;
@@ -20,6 +21,7 @@
 }
 
 .NavBar {
+    min-height: 0;
     padding: 7px;
     margin: 0;
     background-color: #576CA8;

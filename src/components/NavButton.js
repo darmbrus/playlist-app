@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class NavButton extends React.Component {
   render() {
     return (
       <div className="NavButton">
-        <li><a onClick={this.props.onClick}>{this.props.name}</a></li>
+        <li>
+          <Link to={this.props.link}>
+            {this.props.name}
+          </Link>
+        </li>
       </div>
     );
   }

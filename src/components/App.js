@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../style/App.css';
 import Header from './Header.js';
 import NavBar from '../containers/NavBar.js';
-import Content from '../containers/Content.js';
 import Footer from './Footer.js';
 
 class App extends Component {
@@ -12,7 +11,9 @@ class App extends Component {
         <Header />
         <div className="Main">
           <NavBar />
-          <Content />
+          <div className="Content">
+            {this.props.children}
+          </div>
         </div>
         <Footer />
       </div>

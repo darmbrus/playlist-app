@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchUserInfo } from '../actions/userInfo_actions.js';
+import { bindActionCreators } from 'redux'
 
 class UserInfo extends Component {
+  componentWillMount() {
+    this.props.fetchUserInfo()
+  }
   renderUserInfoList() {
     if (this.props.user != null) {
       return (
@@ -20,10 +25,12 @@ class UserInfo extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.user
-  }
+function mapStateToProps({ user }) {
+  return { user }
 }
 
-export default connect(mapStateToProps, null)(UserInfo)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchUserInfo }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserInfo)

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createRandomPlaylist } from '../actions/playlists_action.js';
+import { fetchPlaylists, createRandomPlaylist } from '../actions/playlists_action.js';
 import { bindActionCreators } from 'redux';
 
 class PlaylistList extends Component {
+  componentWillMount() {
+    this.props.fetchPlaylists();
+  }
+
   renderList(playlists) {
     if (playlists == null) {
       return <div></div>
@@ -34,7 +38,10 @@ function mapStateToProps({ playlists }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createRandomPlaylist: createRandomPlaylist }, dispatch)
+  return bindActionCreators({
+    createRandomPlaylist: createRandomPlaylist,
+    fetchPlaylists: fetchPlaylists
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistList)
