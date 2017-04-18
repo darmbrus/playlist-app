@@ -10,7 +10,7 @@ import routes from './routes';
 
 const createStroreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-export const API_ROOT = "http://localhost:8082"
+export const API_ROOT = "/api"
 
 ReactDOM.render(
   <Provider store={createStroreWithMiddleware(reducers)}>
