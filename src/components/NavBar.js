@@ -14,6 +14,9 @@ class NavBar extends Component {
         <NavButton
           name="Playlists"
           link="/playlists" />
+        <NavButton
+          name="Uri"
+          link="/uri" />
       </ul>
     )
   }

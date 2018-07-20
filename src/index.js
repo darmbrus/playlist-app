@@ -11,7 +11,7 @@ import routes from './routes';
 const createStroreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 export const API_ROOT = "/api"
-export const APP_VERSION = "0.1.0"
+export const APP_VERSION = "0.1.1"
 
 ReactDOM.render(
   <Provider store={createStroreWithMiddleware(reducers)}>
